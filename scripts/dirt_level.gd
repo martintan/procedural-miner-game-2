@@ -2,10 +2,13 @@ extends Node
 
 var chunk_width = 21
 var chunk_height = 20
+var center_pos = ceil(chunk_width / 2) * 100
 
 onready var factory = preload("res://scenes/blocks/block_factory.tscn").instance()
-onready var blocks_container = $blocks_container
-onready var spawn_pos = get_node("../spawn_pos").position
+onready var blocks_container = $BlocksContainer
+onready var spawn_pos = get_node("../SpawnPos").position
+
+signal generate_finish
 
 func _ready():
 	pass
@@ -28,4 +31,6 @@ func generate(spawn_pos):
 			blocks_container.add_child(block)
 			block.position = spawn
 			spawn.x += 100
-			yield(get_tree(), "idle_frame")
+		yield(get_tree(), "idle_frame")
+		
+	emit_signal("generate_finish")

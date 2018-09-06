@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/blocks/block_factory.gd" type="Script" id=1]
 [ext_resource path="res://scenes/blocks/Dirt.gd" type="Script" id=2]
 [ext_resource path="res://scenes/common/assets/dirt tile - 100x100.png" type="Texture" id=3]
 [ext_resource path="res://scenes/blocks/Stone.gd" type="Script" id=4]
 [ext_resource path="res://scenes/common/assets/Stone.png" type="Texture" id=5]
-[ext_resource path="res://scenes/common/assets/grass tile - 100x100.png" type="Texture" id=6]
+[ext_resource path="res://scenes/blocks/Grass.gd" type="Script" id=6]
+[ext_resource path="res://scenes/common/assets/grass tile - 100x100.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -112,11 +113,12 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+script = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="Grass" index="0"]
 
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 

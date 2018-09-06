@@ -6,7 +6,7 @@
 
 [node name="main" type="Node"]
 
-[node name="static_tilemap" type="TileMap" parent="." index="0"]
+[node name="StaticTiles" type="TileMap" parent="." index="0"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -27,24 +27,24 @@ format = 1
 tile_data = PoolIntArray(  )
 _sections_unfolded = [ "Cell" ]
 
-[node name="world_generator" type="Node2D" parent="." index="1"]
+[node name="WorldGenerator" type="Node2D" parent="." index="1"]
 
 script = ExtResource( 2 )
 
-[node name="spawn_pos" type="Position2D" parent="world_generator" index="0"]
+[node name="SpawnPos" type="Position2D" parent="WorldGenerator" index="0"]
 
 position = Vector2( 88, 260 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="blocks" type="Node" parent="." index="2"]
+[node name="Entities" type="Node" parent="." index="2"]
 
 [node name="Camera2D" type="Camera2D" parent="." index="3"]
 
-position = Vector2( 1118.19, 1149.18 )
+position = Vector2( 611.322, 352.499 )
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 4, 4 )
+zoom = Vector2( 2, 2 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
@@ -64,5 +64,6 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 script = ExtResource( 3 )
+_sections_unfolded = [ "Smoothing" ]
 
 
