@@ -2,7 +2,7 @@ extends Node
 
 var chunk_width = 21
 var chunk_height = 20
-var center_pos = ceil(chunk_width / 2) * 100
+var center_pos = (round(chunk_width / 2) * 100) + 50
 
 onready var factory = preload("res://scenes/blocks/block_factory.tscn").instance()
 onready var blocks_container = $BlocksContainer

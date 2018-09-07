@@ -5,7 +5,7 @@ var block
 
 func primary_attack(block):
 	self.block = block
-	print("attempting to break:", block, block.name)
+#	print("attempting to break:", block, block.name)
 	for b in breakable:
 		if block.name.find(b) != -1:
 			destroy_block()

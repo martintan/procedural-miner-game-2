@@ -24,4 +24,6 @@ func on_generate_finish():
 	get_parent().remove_child(cam)
 	player.add_child(cam)
 	cam.position = Vector2()
+#	cam.zoom = Vector2(2, 2)
+	cam.get_node("AnimationPlayer").play("smooth_zoom")
 	

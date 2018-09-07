@@ -7,11 +7,14 @@ func _ready():
 	pass
 	
 func on_primary_attack(tool_idx):
-	var in_range = $AttackRange.get_overlapping_bodies()
-#	var t = tools[tool_idx]
-	var t = $DefaultPickaxe
-	if in_range.size() > 0 and t != null:
-		t.primary_attack(in_range.pop_front())
+	var space_state = get_world_2d().direct_space_state
+	var result = space_state.intersect_ray(global_position, global_position + direction * 200, [get_parent()])
+	if not result.empty():
+		var collider = result.collider
+		if collider.is_in_group("breakable"):
+		#	var t = tools[tool_idx]
+			var t = $DefaultPickaxe
+			t.primary_attack(collider)
 	
 func _process(delta):
 	if Input.is_action_just_pressed("tool_1"):
