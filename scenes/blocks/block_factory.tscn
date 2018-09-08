@@ -26,7 +26,7 @@ extents = Vector2( 50, 50 )
 [sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
-extents = Vector2( 50, 50 )
+extents = Vector2( 50, 45 )
 
 [node name="BlockFactory" type="Node"]
 
@@ -132,7 +132,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grass" index="1"]
 
-position = Vector2( 50, 50 )
+position = Vector2( 50, 55 )
 shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 

@@ -20,10 +20,4 @@ func on_generate_finish():
 	var player = player_scn.instance()
 	get_node("../Entities").add_child(player)
 	player.position = Vector2(center_pos, spawn_pos.y-100)
-	var cam = get_node("../Camera2D")
-	get_parent().remove_child(cam)
-	player.add_child(cam)
-	cam.position = Vector2()
-#	cam.zoom = Vector2(2, 2)
-	cam.get_node("AnimationPlayer").play("smooth_zoom")
 	
