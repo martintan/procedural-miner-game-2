@@ -15,23 +15,17 @@ func _ready():
 	pass
 	
 func _process(delta):
-	var grounded = is_on_floor()
-	if grounded: velocity.y = 0
-	
-	velocity.y += gravity * gravity_modifier
-	velocity.x = lerp(velocity.x, 0, 0.5)
 	
 	if Input.is_action_pressed("move_left"):
 		velocity.x = -move_speed
 	if Input.is_action_pressed("move_right"):
 		velocity.x = move_speed
-	if grounded and Input.is_action_just_pressed("jump"):
+	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = -jump_height
 		
 		
 func _physics_process(delta):
-#	velocity.y += gravity * gravity_modifier
-#	velocity.x = lerp(velocity.x, 0, 0.5)
-	print(velocity.y)
-	move_and_slide(velocity, floor_normal)
+	velocity.y += gravity * gravity_modifier
+	velocity.x = lerp(velocity.x, 0, 0.5)
+	velocity = move_and_slide(velocity, floor_normal)
 	
