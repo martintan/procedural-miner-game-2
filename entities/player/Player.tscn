@@ -25,6 +25,7 @@ script = ExtResource( 1 )
 gravity = 9.8
 gravity_modifier = 10
 move_speed = 1000
+jump_height = 1500
 
 [node name="ToolHandler" type="Node2D" parent="." index="0"]
 
