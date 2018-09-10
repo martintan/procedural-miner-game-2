@@ -14,24 +14,14 @@ func _ready():
 	pass
 	
 func generate(spawn_pos):
-	var start = spawn_pos
-	var spawn = start
-	for x in chunk_width:
-		var block = factory.get_block(TILES.Blocks.Grass)
-		blocks_container.add_child(block)
-		block.position = spawn
-		spawn.x += 100
-		yield(get_tree(), "idle_frame")
-	
+	var spawn = spawn_pos
 	for y in chunk_height:
-		spawn.x = start.x
+		spawn.x = spawn_pos.x
 		spawn.y += 100
 		for x in chunk_width:
-			var block = factory.get_block(TILES.Blocks.Dirt)
+			var block = factory.get_block(TILES.Blocks.Stone)
 			blocks_container.add_child(block)
 			block.position = spawn
 			spawn.x += 100
 		yield(get_tree(), "idle_frame")
-		
-	# put x back to beginning coordinate
-	emit_signal("generate_finish", Vector2(start.x, spawn.y))
+	emit_signal("generate_finish")

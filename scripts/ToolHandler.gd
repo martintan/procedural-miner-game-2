@@ -8,13 +8,21 @@ func _ready():
 	
 func on_primary_attack(tool_idx):
 	var space_state = get_world_2d().direct_space_state
-	var result = space_state.intersect_ray(global_position, global_position + direction * 200, [get_parent()])
+	var result = space_state.intersect_ray(global_position, global_position + direction.normalized() * 200, [get_parent()])
 	if not result.empty():
 		var collider = result.collider
 		if collider.is_in_group("breakable"):
 		#	var t = tools[tool_idx]
 			var t = $DefaultPickaxe
 			t.primary_attack(collider)
+			
+func _input(event):
+	if event is InputEventMouseMotion:
+		direction = get_global_mouse_position() - global_position
+		update()
+		
+func _draw():
+	draw_line(position, direction.normalized() * 200, Color(0, 0, 0), 1)
 	
 func _process(delta):
 	if Input.is_action_just_pressed("tool_1"):
