@@ -15,7 +15,7 @@ radius = 200.0
 custom_solver_bias = 0.0
 extents = Vector2( 30, 50 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -47,6 +47,13 @@ shape = SubResource( 1 )
 [node name="DefaultPickaxe" type="Node2D" parent="ToolHandler" index="1"]
 
 script = ExtResource( 3 )
+
+[node name="Cooldown" type="Timer" parent="ToolHandler" index="2"]
+
+process_mode = 1
+wait_time = 0.15
+one_shot = true
+autostart = false
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 

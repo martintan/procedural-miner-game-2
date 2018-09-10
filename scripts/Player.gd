@@ -16,7 +16,6 @@ var is_moving = false
 
 func _ready():
 #	$AnimationPlayer.play("idle")
-	print(gravity)
 	pass
 	
 func _process(delta):

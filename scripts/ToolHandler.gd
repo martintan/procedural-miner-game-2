@@ -25,8 +25,9 @@ func _draw():
 	draw_line(position, direction.normalized() * 200, Color(0, 0, 0), 1)
 	
 func _process(delta):
-	if Input.is_action_just_pressed("tool_1"):
+	if Input.is_action_pressed("tool_1") and $Cooldown.is_stopped():
 		on_primary_attack("PICKAXE")
+		$Cooldown.start()
 		
 	elif Input.is_action_just_pressed("tool_2"):
 		on_primary_attack("SHOVEL")
