@@ -34,4 +34,4 @@ func generate(spawn_pos):
 		yield(get_tree(), "idle_frame")
 		
 	# put x back to beginning coordinate
-	emit_signal("generate_finish", Vector2(start.x, spawn.y))
+	emit_signal("generate_finish", Vector2(start.x, spawn.y+100))

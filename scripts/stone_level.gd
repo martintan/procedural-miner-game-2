@@ -24,4 +24,4 @@ func generate(spawn_pos):
 			block.position = spawn
 			spawn.x += 100
 		yield(get_tree(), "idle_frame")
-	emit_signal("generate_finish")
+	emit_signal("generate_finish", Vector2(spawn_pos.x, spawn.y+100))
