@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/dirt_level.gd" type="Script" id=2]
 [ext_resource path="res://scripts/stone_level.gd" type="Script" id=3]
 
-[node name="LevelFactory" type="Node" index="0"]
+[node name="LevelFactory" type="Node"]
 
 script = ExtResource( 1 )
 

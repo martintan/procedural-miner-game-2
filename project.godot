@@ -16,7 +16,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-TILES="*res://globals/tiles.gd"
+global="*res://globals/global.gd"
 
 [debug]
 

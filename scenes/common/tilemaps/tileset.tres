@@ -8,12 +8,12 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 50, 50 )
+extents = Vector2( 48, 48 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 50, 50 )
+extents = Vector2( 48, 48 )
 
 [sub_resource type="RectangleShape2D" id=4]
 
@@ -23,7 +23,7 @@ extents = Vector2( 50, 42.5 )
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 50, 42.5 )
+extents = Vector2( 48, 40.5 )
 
 [resource]
 

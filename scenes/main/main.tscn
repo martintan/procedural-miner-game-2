@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/common/tilemaps/tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://scripts/world_generator.gd" type="Script" id=2]
+[ext_resource path="res://scripts/TileMap.gd" type="Script" id=2]
+[ext_resource path="res://scripts/world_generator.gd" type="Script" id=3]
+[ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=4]
 
-[node name="main" type="Node"]
+[node name="main" type="Node" index="0"]
 
-[node name="StaticTiles" type="TileMap" parent="." index="0"]
+[node name="TileMap" type="TileMap" parent="." index="0"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -23,18 +25,23 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray(  )
-_sections_unfolded = [ "Cell" ]
+tile_data = PoolIntArray( 65536, 4, 0, 65537, 4, 0, 65538, 4, 0, 65539, 4, 0, 65540, 4, 0, 65541, 4, 0, 65542, 4, 0, 65543, 4, 0, 65544, 4, 0, 65545, 4, 0 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Cell", "Collision" ]
+
+[node name="SpawnPos" type="Position2D" parent="TileMap" index="0"]
+
+position = Vector2( 0, 200 )
+_sections_unfolded = [ "Material", "Transform" ]
 
 [node name="WorldGenerator" type="Node2D" parent="." index="1"]
 
-script = ExtResource( 2 )
-
-[node name="SpawnPos" type="Position2D" parent="WorldGenerator" index="0"]
-
-position = Vector2( 88, 260 )
-_sections_unfolded = [ "Material", "Transform" ]
+script = ExtResource( 3 )
 
 [node name="Entities" type="Node" parent="." index="2"]
+
+[node name="Player" parent="Entities" index="0" instance=ExtResource( 4 )]
+
+position = Vector2( 493.816, -57.1357 )
 
 

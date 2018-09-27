@@ -19,7 +19,7 @@ func generate(spawn_pos):
 		spawn.x = spawn_pos.x
 		spawn.y += 100
 		for x in chunk_width:
-			var block = factory.get_block(TILES.Blocks.Stone)
+			var block = factory.get_block(global.Blocks.Stone)
 			blocks_container.add_child(block)
 			block.position = spawn
 			spawn.x += 100

@@ -10,12 +10,9 @@ func _ready():
 func on_primary_attack(tool_idx):
 	var space_state = get_world_2d().direct_space_state
 	var result = space_state.intersect_ray(global_position, global_position + direction.normalized() * break_distance, [get_parent()])
-	if not result.empty():
-		var collider = result.collider
-		if collider.is_in_group("breakable"):
-		#	var t = tools[tool_idx]
-			var t = $DefaultPickaxe
-			t.primary_attack(collider)
+	if not result.empty() and result.collider is TileMap:
+		var tilemap = result.collider
+		tilemap.set_cellv(tilemap.world_to_map(result.position), -1)
 			
 func _input(event):
 	if event is InputEventMouseMotion:

@@ -17,7 +17,7 @@ func generate(spawn_pos):
 	var start = spawn_pos
 	var spawn = start
 	for x in chunk_width:
-		var block = factory.get_block(TILES.Blocks.Grass)
+		var block = factory.get_block(global.Blocks.Grass)
 		blocks_container.add_child(block)
 		block.position = spawn
 		spawn.x += 100
@@ -27,7 +27,7 @@ func generate(spawn_pos):
 		spawn.x = start.x
 		spawn.y += 100
 		for x in chunk_width:
-			var block = factory.get_block(TILES.Blocks.Dirt)
+			var block = factory.get_block(global.Blocks.Dirt)
 			blocks_container.add_child(block)
 			block.position = spawn
 			spawn.x += 100
